@@ -21,7 +21,7 @@ const commentRoutes    = require('./routes/comments'),
 
 //this connects mongoose so we can connect our JS code to MongoDBB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/yelp_camp', {
+mongoose.connect('mongodb+srv://Enderc:Ender5541!@cluster0.mhgn9.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
