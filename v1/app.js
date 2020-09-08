@@ -17,11 +17,12 @@ const commentRoutes    = require('./routes/comments'),
 	  campgroundRoutes = require('./routes/campgrounds'),
 	  authRoutes       = require('./routes/index');
 
-
-
 //this connects mongoose so we can connect our JS code to MongoDBB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Enderc:Ender5541!@cluster0.mhgn9.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+//*****LOCAL, DRAFT VERSION*****
+mongoose.connect(process.env.DATABASEURL, {
+//******DEPLOYED VERSION*******
+// mongoose.connect('mongodb+srv://Enderc:Ender5541!@cluster0.mhgn9.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
