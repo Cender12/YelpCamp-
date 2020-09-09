@@ -17,14 +17,17 @@ const commentRoutes    = require('./routes/comments'),
 	  campgroundRoutes = require('./routes/campgrounds'),
 	  authRoutes       = require('./routes/index');
 
+
+
 //this connects mongoose so we can connect our JS code to MongoDBB
 const mongoose = require('mongoose');
-//*****LOCAL, DRAFT VERSION*****
-mongoose.connect(process.env.DATABASEURL, {
-//******DEPLOYED VERSION*******
-// mongoose.connect('mongodb+srv://Enderc:Ender5541!@cluster0.mhgn9.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+
+//this "process.env.DATABASEURL" protects and connects both DBs depending on if you deploy (MongoAtlas) or if your working locally on draft code (MongoDB). 
+mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/yelp_camp", {
+
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 })
 .then(() => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));

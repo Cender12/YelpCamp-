@@ -11,7 +11,7 @@ router.get("/", function(req, res){
 			console.log(err);
 		} else{
 			//this code sends all the campgrounds that came back and send to campgroudns.ejs file
-			res.render("campgrounds/Index.ejs", {campgrounds:allCampgrounds});
+			res.render("campgrounds/Index.ejs", {campgrounds:allCampgrounds, page: 'campgrounds'});
 		}
 	});
 });
