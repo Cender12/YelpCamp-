@@ -42,7 +42,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
   }
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
-      req.flash('error', 'Invalid address');
+      req.flash('error', 'err.message');
 		console.log(err.message);
       return res.redirect('back');
     }
