@@ -18,3 +18,9 @@
 	display: inline;
 }
 
+/* Google Maps */
+/* needs width and height to appear on screen */
+#map {
+    height: 400px;
+    width: 100%;
+}
